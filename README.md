@@ -50,8 +50,8 @@ class BankloanAdmin(admin.ModelAdmin):
 ## OUTPUT
 
 Include the screenshot of your admin page.
-![image](https://github.com/user-attachments/assets/d51883a5-7a09-4906-9320-fea7f5ed281e)
-![image](https://github.com/user-attachments/assets/8bd93f38-0755-4004-8e9e-c6d0f1063dec)
+![image](https://github.com/user-attachments/assets/8e60d0c7-5634-48b8-bb2b-2022191a5bca)
+
 
 
 ## RESULT

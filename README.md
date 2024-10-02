@@ -26,38 +26,25 @@ Execute Django admin and create details for 10 books
  ```
 Name:Sanjith.R
 Reg  no:212223230191
-from django.db 
- import models 
- from django.contrib import admin
- Models.py
-```
-# Create your models here.
-
 admin.py
-
 from django.contrib import admin
-from .models import Bank,Loandetails
+from .models import Bankloan,BankloanAdmin
+admin.site.register(Bankloan,BankloanAdmin)
 
-# Register your models here.
-admin.site.register(Bank,Loandetails)
-
-# Register your models here.
-```
-models.py
+model.py
 from django.db import models
 from django.contrib import admin
+class Bankloan(models.Model):
+    Name=models.CharField(max_length=50);
+    Gender=models.CharField(max_length=10);
+    Token_no=models.IntegerField(primary_key=True);
+    Amount=models.IntegerField();
+    Phone=models.IntegerField();
 
-class Bank(models.Model):
-    customer_id = models.IntegerField(primary_key=True)
-    customer_name = models.CharField(max_length=50)
-    account_type = models.CharField(max_length=50)
-    loan_amount = models.DecimalField(max_digits=10, decimal_places=2)
-    loan_period = models.CharField(max_length=10, default='12 months')  
-    monthly_interest = models.DecimalField(max_digits=10, decimal_places=2)
-    Submitted_documents = models.CharField(max_length=100, default='None')  
 
-class Loandetails(admin.ModelAdmin):
-    list_display = ('customer_id', 'customer_name', 'account_type', 'loan_amount', 'loan_period', 'monthly_interest', 'Submitted_documents')
+class BankloanAdmin(admin.ModelAdmin):
+    list_display=('Name','Gender','Token_no','Amount','Phone')
+
 ```
 
 ## OUTPUT
